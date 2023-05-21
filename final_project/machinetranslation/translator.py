@@ -16,4 +16,9 @@ lenguage_translator = LanguageTranslatorV3(version="2018-05-01", authenticator=a
 lenguage_translator.set_service_url(url)
 
 
+def englishToFrench(englishText):
+    frenchText = lenguage_translator.translate(text='Hello, how are you today?',model_id='en-fr').get_result()
+
+    return frenchText.get("translations")[0].get("translation")
+
 
